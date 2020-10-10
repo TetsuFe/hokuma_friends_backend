@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-
 class GachaController extends Controller
 {
    public function platinum(){
