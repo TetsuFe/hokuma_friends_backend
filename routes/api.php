@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GachaController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\MyCharacterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +24,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/gacha/platinum',[GachaController::class, 'platinum']);
+Route::get('/myCharacters', [MyCharacterController::class, 'myCharacters']);
 Route::post('/register', [RegisterController::class, 'register']);
 
 Route::group([
