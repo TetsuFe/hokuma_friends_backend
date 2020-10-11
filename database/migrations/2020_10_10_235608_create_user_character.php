@@ -16,9 +16,10 @@ class CreateUserCharacter extends Migration
         Schema::create('user_characters', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->bigInteger('user_id')->unsigned()->default(1)->unique();
+            $table->bigInteger('user_id')->unsigned()->default(1);
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedInteger('characterId');
+            $table->unique(['user_id', 'characterId']);
         });
     }
 
@@ -29,6 +30,6 @@ class CreateUserCharacter extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_character');
+        Schema::dropIfExists('user_characters');
     }
 }

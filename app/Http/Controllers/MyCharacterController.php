@@ -13,6 +13,7 @@ class MyCharacterController extends Controller
         $user = Auth::user();
         if ($user) {
             // return response()->json(["myCharacters" => []]);
+            // $user->characters()->saveMany([new \App\UserCharacter(['characterId'=>3])]);
             // $user->characters()->saveMany([new \App\UserCharacter(['characterId'=>1])]);
             //return response()->json(["myCharacters" => [User::with('characters')->find(1)]]);
             return response()->json(["myCharacters" => $user->characters]);
