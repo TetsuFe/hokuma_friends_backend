@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b4d9944f-f1f8-4042-8914-ea67de2bbbb4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MyCharacterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MyCharacterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.serverless/cloudformation-template-update-stack.json" beforeDir="false" afterPath="$PROJECT_DIR$/.serverless/cloudformation-template-update-stack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.serverless/hokuma-friends-backend.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.serverless/hokuma-friends-backend.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.serverless/serverless-state.json" beforeDir="false" afterPath="$PROJECT_DIR$/.serverless/serverless-state.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,8 +212,7 @@
       <workItem from="1601116660134" duration="866000" />
       <workItem from="1601118257332" duration="2033000" />
       <workItem from="1601692057038" duration="1177000" />
-      <workItem from="1601699342033" duration="324000" />
-      <workItem from="1602368013415" duration="5464000" />
+      <workItem from="1601699342033" duration="1122000" />
     </task>
     <servers />
   </component>
@@ -201,17 +220,25 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="oldMeFiltersMigrated" value="true" />
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="799" y="430" key="NewPhpFileDialog" timestamp="1602373406383">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="799" y="428" key="NewPhpFileDialog" timestamp="1602188138960">
+      <screen x="0" y="23" width="1680" height="990" />
     </state>
     <state x="799" y="430" key="NewPhpFileDialog/0.0.1680.1050/1680.0.1920.1080@0.0.1680.1050" timestamp="1602373406383" />
     <state x="799" y="425" key="NewPhpFileDialog/0.23.1680.983@0.23.1680.983" timestamp="1601117058504" />
-    <state x="799" y="427" key="NewPhpFileDialog/0.23.1680.987/1680.23.1920.1057@0.23.1680.987" timestamp="1602325445661" />
-    <state x="350" y="119" key="SettingsEditor" timestamp="1602329133114">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="799" y="428" key="NewPhpFileDialog/0.23.1680.990@0.23.1680.990" timestamp="1602188138960" />
+    <state x="350" y="134" key="SettingsEditor" timestamp="1601116649823">
+      <screen x="0" y="23" width="1680" height="983" />
     </state>
     <state x="350" y="119" key="SettingsEditor/0.0.1680.1050/1680.0.1920.1080@0.0.1680.1050" timestamp="1602329133114" />
     <state x="350" y="134" key="SettingsEditor/0.23.1680.983@0.23.1680.983" timestamp="1601116649823" />

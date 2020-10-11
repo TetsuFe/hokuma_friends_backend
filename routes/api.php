@@ -6,7 +6,6 @@ use App\Http\Controllers\GachaController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\MyCharacterController;
 
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -40,4 +39,3 @@ Route::group([
     Route::post('me', 'AuthController@me');
 
 });
-
