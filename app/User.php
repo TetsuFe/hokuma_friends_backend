@@ -12,6 +12,10 @@ class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
 
+    public function characters(){
+        return  $this->hasMany('App\UserCharacter');
+    }
+
     // Rest omitted for brevity
 
     /**
