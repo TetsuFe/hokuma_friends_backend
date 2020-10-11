@@ -21,9 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b4d9944f-f1f8-4042-8914-ea67de2bbbb4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.serverless/cloudformation-template-update-stack.json" beforeDir="false" afterPath="$PROJECT_DIR$/.serverless/cloudformation-template-update-stack.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.serverless/hokuma-friends-backend.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.serverless/hokuma-friends-backend.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.serverless/serverless-state.json" beforeDir="false" afterPath="$PROJECT_DIR$/.serverless/serverless-state.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MyCharacterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MyCharacterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_08_204724_create_user_character.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_10_235608_create_user_character.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_10_235608_create_user_character.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,6 +213,7 @@
       <workItem from="1601118257332" duration="2033000" />
       <workItem from="1601692057038" duration="1177000" />
       <workItem from="1601699342033" duration="1122000" />
+      <workItem from="1602386210192" duration="2246000" />
     </task>
     <servers />
   </component>
@@ -229,6 +230,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="799" y="428" key="NewPhpFileDialog" timestamp="1602188138960">
