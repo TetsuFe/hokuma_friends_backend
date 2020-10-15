@@ -59,13 +59,13 @@
     "WebsiteLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
-        "LogGroupName": "/aws/lambda/hokuma-friends-backend-dev-website"
+        "LogGroupName": "/aws/lambda/hokuma-friends-backend2-dev-website"
       }
     },
     "ArtisanLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
-        "LogGroupName": "/aws/lambda/hokuma-friends-backend-dev-artisan"
+        "LogGroupName": "/aws/lambda/hokuma-friends-backend2-dev-artisan"
       }
     },
     "IamRoleLambdaExecution": {
@@ -93,7 +93,7 @@
               "Fn::Join": [
                 "-",
                 [
-                  "hokuma-friends-backend",
+                  "hokuma-friends-backend2",
                   "dev",
                   "lambda"
                 ]
@@ -110,7 +110,7 @@
                   ],
                   "Resource": [
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/hokuma-friends-backend-dev*:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/hokuma-friends-backend2-dev*:*"
                     }
                   ]
                 },
@@ -121,7 +121,7 @@
                   ],
                   "Resource": [
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/hokuma-friends-backend-dev*:*:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/hokuma-friends-backend2-dev*:*:*"
                     }
                   ]
                 }
@@ -134,7 +134,7 @@
           "Fn::Join": [
             "-",
             [
-              "hokuma-friends-backend",
+              "hokuma-friends-backend2",
               "dev",
               {
                 "Ref": "AWS::Region"
@@ -152,9 +152,9 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/hokuma-friends-backend/dev/1601699976235-2020-10-03T04:39:36.235Z/hokuma-friends-backend.zip"
+          "S3Key": "serverless/hokuma-friends-backend2/dev/1602730316166-2020-10-15T02:51:56.166Z/hokuma-friends-backend2.zip"
         },
-        "FunctionName": "hokuma-friends-backend-dev-website",
+        "FunctionName": "hokuma-friends-backend2-dev-website",
         "Handler": "public/index.php",
         "MemorySize": 1024,
         "Role": {
@@ -178,14 +178,14 @@
         "WebsiteLogGroup"
       ]
     },
-    "WebsiteLambdaVersionBEb5cicTXx06abo9yVGtvLObnhYSzCz0Z1XLAKeXaNQ": {
+    "WebsiteLambdaVersiondvTr4pQboTGQGvD3NbnSqN5f8xNJbUPCDlMp1wYQM": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "WebsiteLambdaFunction"
         },
-        "CodeSha256": "/iY2COiQZoSqF1YpnA4GLIdyQbRt9Pz6g4UhI4v7vZ8="
+        "CodeSha256": "dXU9cmgFK8ZmCQhXLTuoS+RmCiUGaQJXch8aSyuAIvA="
       }
     },
     "ArtisanLambdaFunction": {
@@ -195,9 +195,9 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/hokuma-friends-backend/dev/1601699976235-2020-10-03T04:39:36.235Z/hokuma-friends-backend.zip"
+          "S3Key": "serverless/hokuma-friends-backend2/dev/1602730316166-2020-10-15T02:51:56.166Z/hokuma-friends-backend2.zip"
         },
-        "FunctionName": "hokuma-friends-backend-dev-artisan",
+        "FunctionName": "hokuma-friends-backend2-dev-artisan",
         "Handler": "artisan",
         "MemorySize": 1024,
         "Role": {
@@ -222,20 +222,20 @@
         "ArtisanLogGroup"
       ]
     },
-    "ArtisanLambdaVersionp6cBlS41UYjRFjOhJlJNT9nJ1l1HdoAWr9XMm8y0dU": {
+    "ArtisanLambdaVersionukLcYIxwi3aSg7Hc6pqafy4J6GbyTorAD9t8LPMIU4": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ArtisanLambdaFunction"
         },
-        "CodeSha256": "/iY2COiQZoSqF1YpnA4GLIdyQbRt9Pz6g4UhI4v7vZ8="
+        "CodeSha256": "dXU9cmgFK8ZmCQhXLTuoS+RmCiUGaQJXch8aSyuAIvA="
       }
     },
     "ApiGatewayRestApi": {
       "Type": "AWS::ApiGateway::RestApi",
       "Properties": {
-        "Name": "dev-hokuma-friends-backend",
+        "Name": "dev-hokuma-friends-backend2",
         "EndpointConfiguration": {
           "Types": [
             "EDGE"
@@ -348,7 +348,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1601699971865": {
+    "ApiGatewayDeployment1602730311812": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -408,13 +408,13 @@
     "WebsiteLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "WebsiteLambdaVersionBEb5cicTXx06abo9yVGtvLObnhYSzCz0Z1XLAKeXaNQ"
+        "Ref": "WebsiteLambdaVersiondvTr4pQboTGQGvD3NbnSqN5f8xNJbUPCDlMp1wYQM"
       }
     },
     "ArtisanLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ArtisanLambdaVersionp6cBlS41UYjRFjOhJlJNT9nJ1l1HdoAWr9XMm8y0dU"
+        "Ref": "ArtisanLambdaVersionukLcYIxwi3aSg7Hc6pqafy4J6GbyTorAD9t8LPMIU4"
       }
     },
     "ServiceEndpoint": {
