@@ -21,9 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b4d9944f-f1f8-4042-8914-ea67de2bbbb4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MyCharacterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MyCharacterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_08_204724_create_user_character.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_10_235608_create_user_character.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_10_235608_create_user_character.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
