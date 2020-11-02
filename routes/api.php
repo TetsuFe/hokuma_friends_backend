@@ -22,8 +22,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/gacha/platinum',[GachaController::class, 'platinum']);
-Route::get('/myCharacters', [MyCharacterController::class, 'myCharacters']);
+Route::get('/gacha/platinum',[GachaController::class, 'platinum'])->middleware('auth:api');;
+Route::get('/myCharacters', [MyCharacterController::class, 'myCharacters'])->middleware('auth:api');
 Route::post('/register', [RegisterController::class, 'register']);
 
 Route::group([
@@ -39,3 +39,7 @@ Route::group([
     Route::post('me', 'AuthController@me');
 
 });
+
+Route::get('/', function () {
+    return response()->json(['error' => 'Unauthenticated.'], 401);
+})->name('login');
