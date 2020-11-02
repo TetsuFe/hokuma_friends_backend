@@ -1,3 +1,5 @@
 ## ホクマフレンズ
 
-https://i948gk4k0m.execute-api.ap-northeast-1.amazonaws.com/dev/api/gacha/platinum/
+![Laravel](https://github.com/TetsuFe/hokuma_friends_backend/workflows/Laravel/badge.svg?branch=master)
+
+
