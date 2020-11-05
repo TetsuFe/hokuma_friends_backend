@@ -16,7 +16,9 @@ class GachaTest extends TestCase
     public function testNotAuthenticatedUser()
     {
         $response = $this->get('/api/gacha/platinum');
-
         $response->assertStatus(302);
+
+        $response = $this->followingRedirects()->get('/api/gacha/platinum');
+        $response->assertStatus(401);
     }
 }
