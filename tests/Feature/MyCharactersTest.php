@@ -13,10 +13,12 @@ class MyCharactersTest extends TestCase
      *
      * @return void
      */
-    public function testNotAuthenticatedUser()
+    public function testNotAuthenticated()
     {
         $response = $this->get('/api/myCharacters/');
-
         $response->assertStatus(302);
+
+        $response = $this->followingRedirects()->get('/api/myCharacters/');
+        $response->assertStatus(401);
     }
 }
