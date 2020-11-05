@@ -13,7 +13,7 @@ class GachaTest extends TestCase
      *
      * @return void
      */
-    public function testNotAuthenticatedUser()
+    public function testNotAuthenticated()
     {
         $response = $this->get('/api/gacha/platinum');
         $response->assertStatus(302);
