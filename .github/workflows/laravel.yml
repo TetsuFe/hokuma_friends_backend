@@ -20,7 +20,9 @@ jobs:
     - name: copy .env
       run: cp .env.ci .env
     - name: Generate key and set to .env
-      run: sh writeAppKey.sh
+      run: |
+        key=$(php artisan key:generate --show)
+        echo "\nAPP_KEY=$key\n" >> .env
     - name: debug print .env
       run: cat .env
     - name: Directory Permissions
