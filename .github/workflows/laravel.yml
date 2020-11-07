@@ -23,6 +23,8 @@ jobs:
       run: php artisan key:generate
     - name: clear cache
       run: php artisan config:cache
+    - name: debug print .env
+      run: cat .env | grep ^APP_
     - name: Directory Permissions
       run: chmod -R 777 storage bootstrap/cache
     - name: Create Database
