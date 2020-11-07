@@ -22,7 +22,7 @@ jobs:
     - name: Generate key and set to .env
       run: |
         key=$(php artisan key:generate --show)
-        echo "\nAPP_KEY=$key\n" >> .env
+        echo "APP_KEY=$key" >> .env
     - name: debug print .env
       run: cat .env
     - name: Directory Permissions
