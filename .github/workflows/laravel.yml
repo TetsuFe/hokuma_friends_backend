@@ -27,6 +27,8 @@ jobs:
         touch database/database.sqlite
     - name: copy .env
       run: cp .env.ci .env
+    - name: migration
+      run: yes | php artisan migrate
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       env:
         DB_CONNECTION: sqlite
