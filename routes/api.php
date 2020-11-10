@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GachaController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\MyCharacterController;
+use App\Http\Controllers\QuestResultController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,5 @@ Route::group([
 Route::get('/', function () {
     return response()->json(['error' => 'Unauthenticated.'], 401);
 })->name('login');
+
+Route::post('/questResult/updateQuestClearResult', [QuestResultController::class, 'updateQuestClearStatus'])->middleware('auth:api');

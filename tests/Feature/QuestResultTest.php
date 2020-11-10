@@ -1,0 +1,22 @@
+<?php
+
+namespace Tests\Feature;
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
+
+class QuestResultTest extends TestCase
+{
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testNotAuthenticated()
+    {
+        $response = $this->postJson('/api/questResult/updateQuestClearResult', ['questId'=>1, 'isClear'=>true]);
+
+        $response->assertStatus(401);
+    }
+}
