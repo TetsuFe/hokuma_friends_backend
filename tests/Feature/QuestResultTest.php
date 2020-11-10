@@ -28,4 +28,10 @@ class QuestResultTest extends TestCase
         $response->assertStatus(200);
     }
 
+    public function testPostClearedQuest(){
+        $user = factory(User::class)->create();
+        $response = $this->actingAs($user)->postJson('/api/questResult/updateQuestClearResult', ['questId'=>1, 'isCleared'=>true]);
+        $response->assertStatus(200);
+        $response->assertJson(['questId'=>1,'isCleared'=>true]);
+    }
 }
