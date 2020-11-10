@@ -23,7 +23,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/gacha/platinum',[GachaController::class, 'platinum'])->middleware('auth:api');;
+Route::get('/gacha/platinum', [GachaController::class, 'platinum'])->middleware('auth:api');;
 Route::get('/myCharacters', [MyCharacterController::class, 'myCharacters'])->middleware('auth:api');
 Route::post('/register', [RegisterController::class, 'register']);
 
