@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GachaController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\MyCharacterController;
+use App\Http\Controllers\QuestResultController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/gacha/platinum',[GachaController::class, 'platinum'])->middleware('auth:api');;
+Route::get('/gacha/platinum', [GachaController::class, 'platinum'])->middleware('auth:api');;
 Route::get('/myCharacters', [MyCharacterController::class, 'myCharacters'])->middleware('auth:api');
 Route::post('/register', [RegisterController::class, 'register']);
 
@@ -42,3 +43,6 @@ Route::group([
 Route::get('/', function () {
     return response()->json(['error' => 'Unauthenticated.'], 401);
 })->name('login');
+
+Route::post('/questResult/updateQuestClearResult', [QuestResultController::class, 'updateQuestClearStatus'])->middleware('auth:api');
+// Route::post('/questResult/updateQuestClearResult', [QuestResultController::class, 'updateQuestClearStatus']);
