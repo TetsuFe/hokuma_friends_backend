@@ -20,8 +20,8 @@ class QuestResultController extends Controller
         } else {
             $oldQuestResult = $oldQuestResults->get()->first();
             if(!$oldQuestResult->isCleared && $isCleared){
-                $questResult = $oldQuestResults->update(['user_id' => Auth::user()->id, 'questId' => $questId, 'isCleared' => $isCleared]);
-                return response()->json(['user_id' => $questResult->user()[0]->id, "questId" => $questResult->questId, 'isCleared' => $questResult->isCleared]);
+                $oldQuestResults->update(['user_id' => Auth::user()->id, 'questId' => $questId, 'isCleared' => $isCleared]);
+                return response()->json(['user_id' => Auth::user()->id, "questId" => $questId, 'isCleared' => $isCleared]);
             }else{
                 return response()->json(['user_id' => Auth::user()->id, "questId" => $questId, 'isCleared' => $isCleared]);
             }
