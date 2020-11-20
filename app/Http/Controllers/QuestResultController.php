@@ -15,7 +15,9 @@ class QuestResultController extends Controller
         $isCleared = $request->input('isCleared');
         $oldQuestResults = QuestResult::query()->where('questId', $questId)->where('user_id', Auth::user()->id);
         if ($oldQuestResults->count() == 0) {
-            $questResult = QuestResult::query()->create(['user_id' => Auth::user()->id, 'questId' => $questId, 'isCleared' => $isCleared]);
+            // $questResult = QuestResult::query()->create(['user_id' => Auth::user()->id, 'questId' => $questId, 'isCleared' => $isCleared]);
+            $questResult = new QuestResult(['user_id' => Auth::user()->id, 'questId' => $questId, 'isCleared' => $isCleared]);
+            Auth::user()->questResults()->save($questResult);
             return response()->json(['user_id' => $questResult->user()[0]->id, "questId" => $questResult->questId, 'isCleared' => $questResult->isCleared]);
         } else {
             $oldQuestResult = $oldQuestResults->get()->first();
@@ -26,5 +28,10 @@ class QuestResultController extends Controller
                 return response()->json(['user_id' => Auth::user()->id, "questId" => $questId, 'isCleared' => $isCleared]);
             }
         }
+    }
+
+    public function index(){
+        $questResults = Auth()->user()->questResults()->get();
+        return response()->json(['questResults'=>$questResults]);
     }
 }

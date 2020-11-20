@@ -48,4 +48,12 @@ class QuestResultTest extends TestCase
         $questResult = QuestResult::query()->where('user_id',$user->id)->where('questId',1)->get()->first();
         assert($questResult->isCleared, true);
     }
+
+    public function testGetQuestResults(){
+        $user = factory(User::class)->create();
+        $response = $this->actingAs($user)->postJson('/api/questResult/updateQuestClearResult', ['questId'=>1, 'isCleared'=>false]);
+        $response->assertJson(['user_id'=>$user->id,'questId'=>1,'isCleared'=>false]);
+        $response2 = $this->actingAs($user)->getJson('api/questResult/index');
+        $response2->assertJson(['questResults' => ['0' => ['user_id' => $user->id, 'questId'=> 1, 'isCleared' => false]]]);
+    }
 }

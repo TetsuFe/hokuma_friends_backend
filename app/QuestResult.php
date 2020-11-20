@@ -15,4 +15,8 @@ class QuestResult extends Model
         'questId',
         'isCleared',
     ];
+
+    protected $casts = [
+        'isCleared' => 'boolean'
+    ];
 }
