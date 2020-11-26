@@ -46,3 +46,4 @@ Route::get('/', function () {
 
 Route::post('/questResult/updateQuestClearResult', [QuestResultController::class, 'updateQuestClearStatus'])->middleware('auth:api');
 // Route::post('/questResult/updateQuestClearResult', [QuestResultController::class, 'updateQuestClearStatus']);
+Route::get('/questResult/index', [QuestResultController::class, 'index'])->middleware('auth:api');
