@@ -45,4 +45,5 @@ jobs:
         DB_DATABASE: hokuma_friends
         DB_USERNAME: root
         DB_PASSWORD: password
-      run: vendor/bin/phpunit
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      run: vendor/bin/phpunit --coverage-clover coverage.xml && bash <(curl -s https://codecov.io/bash)

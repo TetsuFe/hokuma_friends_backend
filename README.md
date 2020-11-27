@@ -1,5 +1,6 @@
 ## ホクマフレンズ(バックエンド側)
-![Laravel](https://github.com/TetsuFe/hokuma_friends_backend/workflows/Laravel/badge.svg?branch=master)
+![GitHub Actions](https://github.com/TetsuFe/hokuma_friends_backend/workflows/Laravel/badge.svg?branch=master)
+[![codecov](https://codecov.io/gh/TetsuFe/hokuma_friends_backend/branch/master/graph/badge.svg?token=37BNNNI0ZV)](https://codecov.io/gh/TetsuFe/hokuma_friends_backend)
 
 詳しくはこちらを参照
 
