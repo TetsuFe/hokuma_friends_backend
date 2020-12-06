@@ -40,11 +40,13 @@ class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
 
-    public function characters(){
-        return  $this->hasMany('App\UserCharacter');
+    public function characters()
+    {
+        return $this->hasMany('App\UserCharacter');
     }
 
-    public function questResults(){
+    public function questResults()
+    {
         return $this->hasMany('App\QuestResult');
     }
 
@@ -76,7 +78,7 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'oauth_token',
     ];
 
     /**
