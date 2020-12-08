@@ -19,7 +19,7 @@ class LoginController extends \App\Http\Controllers\Controller
         try {
             $user = Socialite::driver("twitter")->user();
         } catch (\Exception $e) {
-            return redirect('/login')->with('oauth_error', 'ログインに失敗しました');
+            return response()->json(['message'=>'oauth error'], 500);
             // エラーならログイン画面へ転送
         }
         // token（メールアドレスと違ってソーシャルアカウントで不変）を持ったユーザがなければ作る
