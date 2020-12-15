@@ -5,11 +5,13 @@ namespace App\Http\Controllers\Gacha;
 use App\UserCharacter;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use Packages\gacha\PlatinumGacha;
 
 class GachaController extends Controller
 {
    public function platinum(){
-       $randomCharacterId = random_int(1, 5);
+       $gacha = new PlatinumGacha();
+       $randomCharacterId = $gacha->draw();
        $newCharacter = new UserCharacter(['characterId' => $randomCharacterId]);
 
        $user = Auth::user();
