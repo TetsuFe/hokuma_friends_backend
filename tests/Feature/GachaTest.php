@@ -9,6 +9,7 @@ use App\User;
 
 class GachaTest extends TestCase
 {
+    use RefreshDatabase;
     /**
      * A basic feature test example.
      *
