@@ -30,6 +30,6 @@ class UserCharacter extends Model
     }
 
     protected $fillable = [
-        'characterId',
+        'characterId', 'user_id'
     ];
 }
