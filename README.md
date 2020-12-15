@@ -5,3 +5,9 @@
 詳しくはこちらを参照
 
 [https://github.com/TetsuFe/hokuma_friends_client/blob/master/README.md](https://github.com/TetsuFe/hokuma_friends_client/blob/master/README.md)
+
+## 遊べること
+- ガチャ
+- クエスト
+- ストーリー
+- マイホクマ
