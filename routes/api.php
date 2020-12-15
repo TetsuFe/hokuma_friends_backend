@@ -2,10 +2,11 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GachaController;
+use App\Http\Controllers\Gacha\GachaController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\MyCharacterController;
-use App\Http\Controllers\QuestResultController;
+use App\Http\Controllers\Character\MyCharacterController;
+use App\Http\Controllers\Quest\QuestResultController;
+use App\Http\Controllers\Auth\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,10 +35,10 @@ Route::group([
 
 ], function ($router) {
 
-    Route::post('login', 'AuthController@login');
-    Route::post('logout', 'AuthController@logout');
-    Route::post('refresh', 'AuthController@refresh');
-    Route::get('me', 'AuthController@me');
+    Route::post('login', [AuthController::class, 'login']);
+    Route::post('logout', [AuthController::class, 'logout']);
+    Route::post('refresh', [AuthController::class, 'refresh']);
+    Route::get('me', [AuthController::class, 'me']);
 });
 
 Route::get('/', function () {

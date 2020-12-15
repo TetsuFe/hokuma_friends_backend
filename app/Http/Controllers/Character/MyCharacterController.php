@@ -1,10 +1,11 @@
 <?php
 
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Character;
 
 use \Illuminate\Support\Facades\Auth;
 use \App\User;
+use App\Http\Controllers\Controller;
 
 class MyCharacterController extends Controller
 {
