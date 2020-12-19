@@ -12,7 +12,7 @@ class QuestResultValidator
         if ($latestQuestResult == []) {
             return $questResultId == 1;
         } else {
-            return $questResultId == QuestResult::query()->where('user_id', '=', $authUserId)->orderByDesc('id');
+            return $questResultId == QuestResult::query()->where('user_id', '=', $authUserId)->orderByDesc('id')->first()->questId+1;
         }
     }
 }
