@@ -12,6 +12,7 @@ use Tests\TestCase;
 class QuestResultTest extends TestCase
 {
     use RefreshDatabase;
+
     /**
      * A basic feature test example.
      *
@@ -31,30 +32,53 @@ class QuestResultTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function testPostClearedQuest(){
+    public function testPostClearedQuest()
+    {
         $user = factory(User::class)->create();
-        $response = $this->actingAs($user)->postJson('/api/questResult/updateQuestClearResult', ['questId'=>1, 'isCleared'=>true]);
+        $response = $this->actingAs($user)->postJson('/api/questResult/updateQuestClearResult', ['questId' => 1, 'isCleared' => true]);
         $response->assertStatus(200);
-        $response->assertJson(['user_id'=>$user->id,'questId'=>1,'isCleared'=>true]);
+        $response->assertJson(['user_id' => $user->id, 'questId' => 1, 'isCleared' => true]);
     }
 
-    public function testUpdateQuest(){
+    public function testUpdateQuest()
+    {
         $user = factory(User::class)->create();
-        $response = $this->actingAs($user)->postJson('/api/questResult/updateQuestClearResult', ['questId'=>1, 'isCleared'=>false]);
-        $response->assertJson(['user_id'=>$user->id,'questId'=>1,'isCleared'=>false]);
+        $response = $this->actingAs($user)->postJson('/api/questResult/updateQuestClearResult', ['questId' => 1, 'isCleared' => false]);
+        $response->assertJson(['user_id' => $user->id, 'questId' => 1, 'isCleared' => false]);
         Log::debug($response->json());
-        $response2 = $this->actingAs($user)->postJson('/api/questResult/updateQuestClearResult', ['questId'=>1, 'isCleared'=>true]);
+        $response2 = $this->actingAs($user)->postJson('/api/questResult/updateQuestClearResult', ['questId' => 1, 'isCleared' => true]);
         Log::debug($response2->json());
-        $response2->assertJson(['user_id'=>$user->id,'questId'=>1,'isCleared'=>true]);
-        $questResult = QuestResult::query()->where('user_id',$user->id)->where('questId',1)->get()->first();
+        $response2->assertJson(['user_id' => $user->id, 'questId' => 1, 'isCleared' => true]);
+        $questResult = QuestResult::query()->where('user_id', $user->id)->where('questId', 1)->get()->first();
         assert($questResult->isCleared, true);
     }
 
-    public function testGetQuestResults(){
+    public function testGetQuestResults()
+    {
         $user = factory(User::class)->create();
-        $response = $this->actingAs($user)->postJson('/api/questResult/updateQuestClearResult', ['questId'=>1, 'isCleared'=>false]);
-        $response->assertJson(['user_id'=>$user->id,'questId'=>1,'isCleared'=>false]);
+        $response = $this->actingAs($user)->postJson('/api/questResult/updateQuestClearResult', ['questId' => 1, 'isCleared' => false]);
+        $response->assertJson(['user_id' => $user->id, 'questId' => 1, 'isCleared' => false]);
         $response2 = $this->actingAs($user)->getJson('api/questResult/index');
-        $response2->assertJson(['questResults' => ['0' => ['user_id' => $user->id, 'questId'=> 1, 'isCleared' => false]]]);
+        $response2->assertJson(['questResults' => ['0' => ['user_id' => $user->id, 'questId' => 1, 'isCleared' => false]]]);
+    }
+
+    public function testCorrectOrderQuestResult()
+    {
+        $user = factory(User::class)->create();
+        $this->be($user);
+        $this
+            ->postJson('/api/questResult/updateQuestClearResult', ['questId' => 1, 'isCleared' => true]);
+        $response2 = $this
+            ->postJson('/api/questResult/updateQuestClearResult', ['questId' => 2, 'isCleared' => true]);
+        $response2->assertStatus(200);
+    }
+
+    public function testWrongOrderQuestResult()
+    {
+        $user = factory(User::class)->create();
+        $this->be($user);
+        $response = $this
+            ->postJson('/api/questResult/updateQuestClearResult', ['questId' => 2, 'isCleared' => true]);
+        $response->assertStatus(400);
     }
 }

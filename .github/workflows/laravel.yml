@@ -23,10 +23,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Setup PHP with composer v2
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.4'
+        tools: composer:v2
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Dependencies
-      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      run: |
+        composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
     - name: copy .env
       run: cp .env.ci .env
     - name: Generate key and set to .env
