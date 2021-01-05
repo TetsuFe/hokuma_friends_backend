@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Character\MyCharacterController;
 use App\Http\Controllers\Quest\QuestResultController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\StoryProgress\StoryProgressController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,7 @@ Route::group([
     Route::post('logout', [AuthController::class, 'logout']);
     Route::post('refresh', [AuthController::class, 'refresh']);
     Route::get('me', [AuthController::class, 'me']);
+    Route::get('/storyProgress', [StoryProgressController::class, 'getLatestReadableId'])->middleware('auth:api');
 });
 
 Route::get('/', function () {
