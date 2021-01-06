@@ -50,6 +50,11 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany('App\QuestResult');
     }
 
+    public function storyProgress()
+    {
+        return $this->hasOne('App\StoryProgress');
+    }
+
     // Rest omitted for brevity
 
     /**
