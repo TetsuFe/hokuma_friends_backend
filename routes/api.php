@@ -40,7 +40,9 @@ Route::group([
     Route::post('logout', [AuthController::class, 'logout']);
     Route::post('refresh', [AuthController::class, 'refresh']);
     Route::get('me', [AuthController::class, 'me']);
-    Route::get('/storyProgress', [StoryProgressController::class, 'getLatestReadableId'])->middleware('auth:api');
+    Route::get('storyProgress', [StoryProgressController::class, 'getLatestReadableId']);
+    Route::post('updateStoryProgress', [StoryProgressController::class, 'updateStoryProgress']);
+
 });
 
 Route::get('/', function () {
