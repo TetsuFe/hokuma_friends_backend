@@ -16,7 +16,7 @@ class StoryProgressTest extends TestCase
      *
      * @return void
      */
-    public function testExample()
+    public function testGetMyStoryProgress()
     {
         $user = factory(User::class)->create(['id'=>1]);
         $storyProgress = StoryProgress::query()->create(['user_id' => 1, 'id'=>1, 'latest_readable'=>1]);
