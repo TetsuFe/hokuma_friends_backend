@@ -11,6 +11,8 @@ use Tests\TestCase;
 
 class StoryProgressTest extends TestCase
 {
+    use RefreshDatabase;
+
     /**
      * A basic feature test example.
      *
@@ -24,5 +26,16 @@ class StoryProgressTest extends TestCase
         $response = $this->actingAs($user)->getJson('api/auth/storyProgress');
         $response->assertStatus(200);
         $response->assertJson(['latest_readable'=>$storyProgress->latest_readable]);
+    }
+
+    public function testUpdateStoryProgress(){
+        $user = factory(User::class)->create(['id'=>1]);
+        StoryProgress::query()->create(['user_id'=>1, 'id'=>1, 'latest_readable'=>1]);
+
+        $response = $this->actingAs($user)->postJson('api/auth/updateStoryProgress', ['read_story_id'=>1]);
+
+        $response->assertStatus(200);
+        $response->assertJson(['latest_readable'=>2]);
+        $this->assertDatabaseHas('story_progress', ['user_id'=>1, 'latest_readable'=>2]);
     }
 }
