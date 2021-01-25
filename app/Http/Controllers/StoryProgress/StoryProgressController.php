@@ -12,7 +12,11 @@ class StoryProgressController extends Controller
 {
     public function getLatestReadableId(){
         $storyProgress = auth()->user()->storyProgress()->first();
-        return response()->json(['latest_readable'=> $storyProgress->latest_readable]);
+        if(is_null($storyProgress)){
+            return response()->json(['latest_readable'=>1]);
+        }else{
+            return response()->json(['latest_readable'=> $storyProgress->latest_readable]);
+        }
     }
 
     public function updateStoryProgress(Request $request){

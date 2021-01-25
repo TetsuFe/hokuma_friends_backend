@@ -38,4 +38,13 @@ class StoryProgressTest extends TestCase
         $response->assertJson(['latest_readable'=>2]);
         $this->assertDatabaseHas('story_progress', ['user_id'=>1, 'latest_readable'=>2]);
     }
+
+    public function testStoryProgressNotExist(){
+        $user = factory(User::class)->create(['id'=>1]);
+
+        $response = $this->actingAs($user)->getJson('api/auth/storyProgress');
+
+        $response->assertStatus(200);
+        $response->assertJson(['latest_readable'=>1]);
+    }
 }
